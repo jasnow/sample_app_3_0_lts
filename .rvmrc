@@ -19,7 +19,7 @@ if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
   [[ -s ".rvm/hooks/after_use" ]] && . ".rvm/hooks/after_use"
 else
   # If the environment file has not yet been created, use the RVM CLI to select.
-  rvm --create  "$environment_id"
+  rvm --create use  "$environment_id"
 fi
 
 #
