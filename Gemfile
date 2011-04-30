@@ -5,7 +5,7 @@ gem 'rails', '3.0.0'
 gem 'heroku'
 gem 'autotest'
 gem 'autotest-rails-pure'
-gem 'autotest-fsevent'
+#BROKE HEROKU PUSH: gem 'autotest-fsevent'
 gem 'autotest-growl'
 
 group :development do
