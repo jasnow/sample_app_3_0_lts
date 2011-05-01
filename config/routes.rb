@@ -1,6 +1,7 @@
 RtSampleApp::Application.routes.draw do
+  resources :users
 
-  get "users/new"
+  #REMOVED (page 235) get "users/new"
 
   match "/signup",  :to => 'users#new'
   match "/contact", :to => 'pages#contact'

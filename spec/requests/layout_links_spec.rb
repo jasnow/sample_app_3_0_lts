@@ -46,7 +46,8 @@ describe "LayoutLinks" do
 
       click_link "Sign up now!"
       response.should have_selector('title', :content => "Sign up")
+      #From Video:
+      response.should have_selector('a[href="/"]>img')
     end
-
   end
 end
