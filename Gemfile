@@ -1,17 +1,20 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails'
+#, '3.0.0'
 
 gem 'heroku'
 gem 'autotest'
 gem 'autotest-rails-pure'
-#BROKE HEROKU PUSH: gem 'autotest-fsevent'
+
 gem 'autotest-growl'
 
 group :development do
   gem 'rspec-rails'
+  gem 'annotate-models'
 end
 group :test do
+  gem 'autotest-fsevent'
   gem 'rspec'
   gem 'webrat'
   gem 'spork'
