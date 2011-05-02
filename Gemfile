@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-#, '3.0.0'
 
 gem 'heroku'
 gem 'autotest'
 gem 'autotest-rails-pure'
+
+gem 'gravatar_image_tag'
 
 gem 'autotest-growl'
 
@@ -18,6 +19,7 @@ group :test do
   gem 'rspec'
   gem 'webrat'
   gem 'spork'
+  gem 'factory_girl_rails'
 end
 
 # Bundle edge Rails instead:
