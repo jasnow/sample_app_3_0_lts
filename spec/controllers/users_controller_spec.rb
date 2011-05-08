@@ -46,7 +46,7 @@ describe UsersController do
     end
     it "should have a email field" do
       get :new
-      response.should have_selector("input[name='user[email_address]'][type='text']")
+      response.should have_selector("input[name='user[email]'][type='text']")
     end
     it "should have a password field" do
       get :new
@@ -61,7 +61,7 @@ describe UsersController do
   describe "POST 'create'" do
     describe "failure" do
       before(:each) do
-        @attr = { :name => "", :email_address => "", :password => "", 
+        @attr = { :name => "", :email => "", :password => "", 
           :password_confirmation => "" }
       end
 
@@ -84,7 +84,7 @@ describe UsersController do
 
     describe "success" do
       before(:each) do
-        @attr = { :name => "New User", :email_address => "user@example.com",
+        @attr = { :name => "New User", :email => "user@example.com",
                   :password => "foobar", :password_confirmation => "foobar" }
       end
 
@@ -103,6 +103,12 @@ describe UsersController do
         post :create, :user => @attr
         flash[:success].should =~ /welcome to the sample app/i
       end
+
+      it "should sign the user in" do
+        post :create, :user => @attr
+        controller.should be_signed_in
+      end
+
     end
   end
 end

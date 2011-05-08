@@ -4,7 +4,7 @@ describe User do
   before(:each) do
     @attr = { 
       :name => "Example User",
-      :email_address => "user@example.com",
+      :email => "user@example.com",
       :password => "foobar",
       :password_confirmation => "foobar"
     }
@@ -20,7 +20,7 @@ describe User do
   end
 
   it "should require an email address" do
-    no_email_user = User.new(@attr.merge(:email_address => ""))
+    no_email_user = User.new(@attr.merge(:email => ""))
     no_email_user.should_not be_valid
   end
 
@@ -33,7 +33,7 @@ describe User do
   it "should accept valid email addresses" do
     addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
     addresses.each do |address|
-      valid_email_user = User.new(@attr.merge(:email_address => address))
+      valid_email_user = User.new(@attr.merge(:email => address))
       valid_email_user.should be_valid
     end
   end
@@ -41,7 +41,7 @@ describe User do
   it "should accept invalad email addresses" do
     addresses = %w[user@foo,com user_at_foo.org example.user@foo.]
     addresses.each do |address|
-      valid_email_user = User.new(@attr.merge(:email_address => address))
+      valid_email_user = User.new(@attr.merge(:email => :email))
       valid_email_user.should_not be_valid
     end
   end
@@ -54,8 +54,8 @@ describe User do
   end
 
   it "should reject email addresses identical up to case" do
-    upcased_email = @attr[:email_address].upcase
-    User.create!(@attr.merge(:email_address => upcased_email))
+    upcased_email = @attr[:email].upcase
+    User.create!(@attr.merge(:email => upcased_email))
     user_with_duplicate_email = User.new(@attr)
     user_with_duplicate_email.should_not be_valid
   end
@@ -120,7 +120,7 @@ describe User do
 
   describe "password authenticate" do
     it "should return nil on email/password mismatch" do
-      wrong_password_user = User.authenticate(@attr[:email_address], "wrongpass")
+      wrong_password_user = User.authenticate(@attr[:email], "wrongpass")
       wrong_password_user.should be_nil
     end
 
@@ -130,7 +130,7 @@ describe User do
     end
 
     it "should return the user on email/password match" do
-      wrong_password_user = User.authenticate(@attr[:email_address], @attr[:password])
+      wrong_password_user = User.authenticate(@attr[:email], @attr[:password])
       wrong_password_user.should @user
     end
 
