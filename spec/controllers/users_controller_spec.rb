@@ -76,7 +76,7 @@ describe UsersController do
         response.should have_selector("title", :content => "Sign up")
       end
 
-      it "should render the 'new page" do
+      it "should render the 'new page'" do
         post :create, :user => @attr
         response.should render_template('new')
       end
@@ -108,7 +108,6 @@ describe UsersController do
         post :create, :user => @attr
         controller.should be_signed_in
       end
-
     end
   end
 end

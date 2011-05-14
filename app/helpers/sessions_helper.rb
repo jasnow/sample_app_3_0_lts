@@ -23,7 +23,8 @@ module SessionsHelper
 
   def sign_out
     cookies.delete(:remember_token)
-    current_user = nil
+    # FYI: Must use "self." here for it to be green.
+    self.current_user = nil
   end
 
   private
