@@ -7,13 +7,16 @@ gem 'autotest'
 gem 'autotest-rails-pure'
 
 gem 'gravatar_image_tag'
+gem 'will_paginate'
 
 gem 'autotest-growl'
 
 group :development do
   gem 'rspec-rails'
   gem 'annotate-models'
+  gem 'faker'
 end
+
 group :test do
   gem 'autotest-fsevent'
   gem 'rspec'
