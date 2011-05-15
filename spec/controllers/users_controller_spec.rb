@@ -222,14 +222,13 @@ describe UsersController do
 
   describe "GET 'index'" do
 
-# TODO: Currently Red.
-#    describe "for non-signed-in users" do
-#      it "should deny access" do
-#        get :index
-#        response.should redirect_to(signin_path)
-#        flash[:notice].should =~ /sign in/i
-#      end
-#    end
+    describe "for non-signed-in users" do
+      it "should deny access" do
+        get :index
+        response.should redirect_to(signin_path)
+        flash[:notice].should =~ /sign in/i
+      end
+    end
 
     describe "for signed-in users" do
       before(:each) do
@@ -267,6 +266,19 @@ describe UsersController do
         response.should have_selector("a", :href => "/users?page=2", :content => "Next")
       end
 
+      # Next two tests are for Chapter 10 (Exercise 4).
+      it "should not see delete links if not admin" do
+        get :index
+        response.should_not have_selector("a", :href => "/users/2", :content => "delete")
+      end
+
+      it "should see delete links if admin" do
+        fourth = Factory(:user, :email => "seedelete@example.com")
+        fourth.toggle!(:admin) 
+        test_sign_in(fourth) # admin
+        get :index
+        response.should have_selector("a", :href => "/users/2", :content => "delete")
+      end
     end
   end
 
@@ -275,13 +287,12 @@ describe UsersController do
       @user = Factory(:user)
     end
 
-# TODO:
-#    describe "as a non-signed-in user" do
-#      it "should deny access" do
-#        delete :destroy, :id => @user
-#        response.should redirect_to(signin_path)
-#      end
-#    end
+    describe "as a non-signed-in user" do
+      it "should deny access" do
+        delete :destroy, :id => @user
+        response.should redirect_to(signin_path)
+      end
+    end
 
     describe "as a non-admin user" do
       it "should protect the page" do
@@ -293,8 +304,8 @@ describe UsersController do
 
     describe "as an admin user" do
       before(:each) do
-        admin = Factory(:user, :email => "admin@example.com", :admin => true)
-        test_sign_in(admin)
+        @admin = Factory(:user, :email => "admin@example.com", :admin => true)
+        test_sign_in(@admin)
       end
 
       it "should destroy the user" do
@@ -303,9 +314,17 @@ describe UsersController do
         end.should change(User, :count).by(-1) 
       end
 
-      it "should redirect tot he users page" do
+      it "should redirect to the users page" do
         delete :destroy, :id => @user
+        flash[:success].should =~ /destroyed/ 
         response.should redirect_to(users_path)
+      end
+
+# TODO:
+      it "should not be able to destroy itself" do
+        lambda do
+          delete :destroy, :id => @admin
+        end.should change(User, :count).by(0)
       end
    end
  
