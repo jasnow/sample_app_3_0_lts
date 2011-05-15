@@ -95,6 +95,11 @@ class User < ActiveRecord::Base
 #    user && user.has_password?(submitted_password) ? user : nil
 #  end
 
+  def feed
+    # This is preliminary. See Chapter 12 for the full implementation. 
+    Micropost.where("user_id = ?", id)
+  end
+
   private
     def encrypt_password
       self.salt = make_salt if new_record?
