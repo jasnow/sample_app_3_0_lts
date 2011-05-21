@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'rake', '0.8.7'
+
 gem 'rails'
 
 gem 'heroku'
@@ -14,10 +16,10 @@ gem 'autotest-growl'
 group :development do
   gem 'rspec-rails'
   gem 'annotate-models'
-  gem 'faker'
 end
 
 group :test do
+  gem 'faker'
   gem 'autotest-fsevent'
   gem 'rspec'
   gem 'webrat'

@@ -30,7 +30,7 @@ GEM
       activesupport (= 3.0.7)
     activesupport (3.0.7)
     annotate-models (1.0.4)
-    arel (2.0.9)
+    arel (2.0.10)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
     autotest-fsevent (0.2.5)
@@ -90,7 +90,7 @@ GEM
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
       rspec-mocks (~> 2.6.0)
-    rspec-core (2.6.0)
+    rspec-core (2.6.2)
     rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.6.0)
@@ -111,7 +111,7 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
-    will_paginate (3.0.pre2)
+    will_paginate (2.3.15)
 
 PLATFORMS
   ruby
@@ -127,6 +127,7 @@ DEPENDENCIES
   gravatar_image_tag
   heroku
   rails
+  rake (= 0.8.7)
   rspec
   rspec-rails
   spork
