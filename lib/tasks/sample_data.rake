@@ -20,6 +20,7 @@ namespace :db do
     end
 
     User.all(:limit => 6).each do |user|
+     user.microposts.create!(:content => "a" * 75)
       50.times do
         user.microposts.create!(:content => Faker::Lorem.sentence(5))
       end

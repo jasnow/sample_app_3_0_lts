@@ -8,13 +8,12 @@ describe UsersController do
       @user = Factory(:user)
     end
 
-# TODO:
-    it "should show the user's microposts" do
-      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
-      mp2 = Factory(:micropost, :user => @user, :content => "Baz guux")
+    # Exercise 11.5.4:
+    it "should paginate microposts" do
+      35.times { Factory(:micropost, :user => @user, :content => "foo") }
+      Factory(:micropost, :user => @user, :content => "a" * 55)
       get :show, :id => @user
-      response.should have_selector("span.content", :content => mp1.content)
-      response.should have_selector("span.content", :content => mp2.content)
+      response.should have_selector('div.pagination')
     end
 
     it "should be successful" do
@@ -76,7 +75,7 @@ describe UsersController do
 
       it "should not create a user" do
         lambda do
-          post :create, :user => @attr 
+          post :create, :user => @attr
         end.should_not change(User, :count)
       end
 
@@ -242,9 +241,9 @@ describe UsersController do
     describe "for signed-in users" do
       before(:each) do
         @user = test_sign_in(Factory(:user))
-        second = Factory(:user, :email => "another@example.com")
+        @second = Factory(:user, :email => "another@example.com")
         third  = Factory(:user, :email => "another@example.net")
-        @users = [@user, second, third]
+        @users = [@user, @second, third]
         30.times do
           @users << Factory(:user, :email => Factory.next(:email))
         end
@@ -275,6 +274,13 @@ describe UsersController do
         response.should have_selector("a", :href => "/users?page=2", :content => "Next")
       end
 
+      # Exercise 11.5..2:
+      it "should display the micropost count" do
+        10.times { Factory(:micropost, :user => @user, :content => "foo") }
+        get :show, :id => @user
+        response.should have_selector('td.sidebar', :content => @user.microposts.count.to_s)
+      end
+
       # Next two tests are for Chapter 10 (Exercise 4).
       it "should not see delete links if not admin" do
         get :index
@@ -287,6 +293,27 @@ describe UsersController do
         test_sign_in(fourth) # admin
         get :index
         response.should have_selector("a", :href => "/users/2", :content => "delete")
+      end
+
+      it "should show the user's microposts" do
+        mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+        mp2 = Factory(:micropost, :user => @user, :content => "Baz guux")
+        get :show, :id => @user
+        response.should have_selector("span.content", :content => mp1.content)
+        response.should have_selector("span.content", :content => mp2.content)
+      end
+
+      # Exercise 11.5.6: 
+      it "should not see micropost delete links of other people's microposts" do
+        mp3 = Factory(:micropost, :user => @second, :content => "Foo bar")
+        mp4 = Factory(:micropost, :user => @second, :content => "Baz guux")
+        get :show, :id => @user
+        response.should_not have_selector("span.content", :content => mp3.content)
+        response.should_not have_selector("span.content", :content => mp4.content)
+
+        get :show, :id => @second
+        response.should have_selector("span.content", :content => mp3.content)
+        response.should have_selector("span.content", :content => mp4.content)
       end
     end
   end
