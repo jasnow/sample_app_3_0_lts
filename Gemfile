@@ -9,7 +9,7 @@ gem 'autotest'
 gem 'autotest-rails-pure'
 
 gem 'gravatar_image_tag'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.pre2'
 
 gem 'autotest-growl'
 
