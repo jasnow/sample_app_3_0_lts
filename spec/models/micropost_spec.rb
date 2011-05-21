@@ -51,21 +51,20 @@ describe Micropost do
       @user.follow!(@other_user)
     end
 
-#TODO;
-#    it "should have a from_users_followed_by class method" do
-#      Micropost.should respond_to(:from_users_followed_by)
-#    end
-#
-#    it "should include the followed user's microposts" do
-#      Micropost.from_users_followed_by(@user).should include(@other_user)
-#    end
-#
-#    it "should include the user's own microposts" do
-#      Micropost.from_users_followed_by(@user).should include(@user_post)
-#    end
-#
-#    it "should not include an unfollowed user's microposts" do
-#      Micropost.from_users_followed_by(@user).should_not include(@third_post)
-#    end
+    it "should have a from_users_followed_by class method" do
+      Micropost.should respond_to(:from_users_followed_by)
+    end
+
+    it "should include the followed user's microposts" do
+      Micropost.from_users_followed_by(@user).should include(@other_post)
+    end
+
+    it "should include the user's own microposts" do
+      Micropost.from_users_followed_by(@user).should include(@user_post)
+    end
+
+    it "should not include an unfollowed user's microposts" do
+      Micropost.from_users_followed_by(@user).should_not include(@third_post)
+    end
   end
 end
