@@ -19,7 +19,7 @@ class Micropost < ActiveRecord::Base
   validates :user_id, :presence => true
 
   def self.from_users_followed_by(user)
-    followed_ids = user.following.map(&:id).join(" ")
+    followed_ids = user.following.map(&:id).join(", ")
     where("user_id IN (#{followed_ids}) OR user_id = ?", user) 
   end
 

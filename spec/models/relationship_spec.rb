@@ -7,6 +7,7 @@ describe Relationship do
     @followed = Factory(:user, :email => Factory.next(:email))
 
     @relationship = @follower.relationships.build(:followed_id => @followed.id)
+    @reverse_relationship = @followed.relationships.build(:follower_id => @follower.id)
   end
 
   it "should create a new instance given valid attributes" do
@@ -44,6 +45,15 @@ describe Relationship do
     it "should require a followed_id" do
       @relationship.followed_id = nil
       @relationship.should_not be_valid
+    end
+  end
+
+  # Exercise 12.5.1:
+  describe "dependent :destroy" do
+   it "should check that destroyed relationships are gone" do
+      @follower.destroy
+      Relationship.find_by_id(@relationship.id).should be_nil
+      Relationship.find_by_id(@reverse_relationship.id).should be_nil
     end
   end
 end
