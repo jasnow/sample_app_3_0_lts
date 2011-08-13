@@ -3,7 +3,11 @@ source 'http://rubygems.org'
 gem 'rake'
 #, '0.8.7'
 
-gem 'rails'
+gem 'rails', '3.0.10.rc1'
+
+gem "sqlite3", "1.3.3"
+#.2.5", :require => "sqlite3"
+
 gem 'taps'
 
 gem 'heroku'
@@ -11,7 +15,8 @@ gem 'autotest'
 gem 'autotest-rails-pure'
 
 gem 'gravatar_image_tag'
-gem 'will_paginate', '~> 3.0.pre2'
+gem 'will_paginate'
+#, '~> 3.0.pre2'
 
 gem 'autotest-growl'
 
@@ -31,8 +36,6 @@ end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
