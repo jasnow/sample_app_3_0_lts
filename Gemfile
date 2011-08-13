@@ -22,7 +22,8 @@ gem 'autotest-growl'
 
 group :development do
   gem 'rspec-rails'
-  gem 'annotate-models'
+  #gem 'annotate-models'
+  gem 'annotate', '2.4.0'
 end
 
 group :test do
