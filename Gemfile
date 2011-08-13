@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rake', '0.8.7'
+gem 'rake'
+#, '0.8.7'
 
 gem 'rails', '3.0.10.rc1'
 
@@ -8,16 +9,11 @@ gem "sqlite3", "1.3.3"
 #.2.5", :require => "sqlite3"
 
 gem 'taps'
-
 gem 'heroku'
-gem 'autotest'
-gem 'autotest-rails-pure'
 
 gem 'gravatar_image_tag'
 gem 'will_paginate'
 #, '~> 3.0.pre2'
-
-gem 'autotest-growl'
 
 group :development do
   gem 'rspec-rails'
@@ -26,6 +22,10 @@ group :development do
 end
 
 group :test do
+  gem 'autotest'
+  gem 'autotest-rails-pure'
+  gem 'autotest-growl'
+
   gem 'faker'
   gem 'autotest-fsevent'
   gem 'rspec'
