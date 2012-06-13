@@ -1,12 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'rake'
-#, '0.8.7'
+gem "rake", "~> 0.9.0"
 
-gem 'rails', '3.0.10.rc1'
-
-gem "sqlite3", "1.3.3"
-#.2.5", :require => "sqlite3"
+gem 'rails', '3.0.14'
 
 gem 'taps'
 gem 'heroku'
@@ -25,13 +21,21 @@ group :test do
   gem 'autotest'
   gem 'autotest-rails-pure'
   gem 'autotest-growl'
-
+  gem "ffi", "~> 1.0.11"
   gem 'faker'
   gem 'autotest-fsevent'
   gem 'rspec'
   gem 'webrat'
   gem 'spork'
   gem 'factory_girl_rails'
+end
+
+group :development, :test do
+  gem 'pg'
+end
+
+group :production, :staging do
+  gem "pg"
 end
 
 # Bundle edge Rails instead:
@@ -50,7 +54,6 @@ end
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to
