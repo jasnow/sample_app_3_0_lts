@@ -2,7 +2,8 @@ source 'http://rubygems.org'
 
 gem "rake", "~> 0.9.0"
 
-gem 'rails', '3.0.20'
+#gem 'rails', '3.0.20'
+gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => '3-0-stable'
 
 gem 'taps'
 gem 'heroku'
