@@ -1,4 +1,4 @@
-RtSampleApp::Application.routes.draw do
+SampleApp30::Application.routes.draw do
 
   resources :users do
     member do

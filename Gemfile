@@ -6,14 +6,13 @@ gem "rake", "~> 0.9.0"
 gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => '3-0-stable'
 
 gem 'taps'
-gem 'heroku'
 
 gem 'gravatar_image_tag'
 gem 'will_paginate'
 #, '~> 3.0.pre2'
 
 group :development do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '2.14.2'
   #gem 'annotate-models'
   gem 'annotate', '2.4.0'
 end
@@ -31,7 +30,13 @@ group :test do
   gem 'factory_girl_rails'
 end
 
-gem 'pg'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
