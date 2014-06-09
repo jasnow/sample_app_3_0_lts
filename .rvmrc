@@ -1,1 +1,1 @@
-rvm --default use ruby-1.9.3-p392@sp30 --create
+rvm --default use 2.1.2@sp30 --create

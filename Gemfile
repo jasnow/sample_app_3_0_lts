@@ -31,13 +31,7 @@ group :test do
   gem 'factory_girl_rails'
 end
 
-group :development, :test do
-  gem 'pg'
-end
-
-group :production, :staging do
-  gem "pg"
-end
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
