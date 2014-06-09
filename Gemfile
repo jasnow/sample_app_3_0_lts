@@ -2,8 +2,7 @@ source 'http://rubygems.org'
 
 gem "rake"
 
-#gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => '3-0-stable'
-gem 'rails', '3.0.20'
+gem 'rails', :git => 'https://github.com/makandra/rails.git', :branch => '3-0-lts'
 
 gem 'taps'
 gem 'gravatar_image_tag'

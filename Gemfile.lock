@@ -1,8 +1,8 @@
-GEM
-  remote: http://rubygems.org/
+GIT
+  remote: https://github.com/makandra/rails.git
+  revision: 1487be662fa2c6a0361f014b336ed46fd82a9b4b
+  branch: 3-0-lts
   specs:
-    ZenTest (4.10.0)
-    abstract (1.0.0)
     actionmailer (3.0.20)
       actionpack (= 3.0.20)
       mail (~> 2.2.19)
@@ -29,6 +29,27 @@ GEM
       activemodel (= 3.0.20)
       activesupport (= 3.0.20)
     activesupport (3.0.20)
+    rails (3.0.20)
+      actionmailer (= 3.0.20)
+      actionpack (= 3.0.20)
+      activerecord (= 3.0.20)
+      activeresource (= 3.0.20)
+      activesupport (= 3.0.20)
+      bundler (~> 1.0)
+      railties (= 3.0.20)
+    railties (3.0.20)
+      actionpack (= 3.0.20)
+      activesupport (= 3.0.20)
+      railslts-version (= 3.0.20.3)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (~> 0.14.4)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    ZenTest (4.10.0)
+    abstract (1.0.0)
     annotate (2.6.3)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -70,20 +91,7 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
-    rails (3.0.20)
-      actionmailer (= 3.0.20)
-      actionpack (= 3.0.20)
-      activerecord (= 3.0.20)
-      activeresource (= 3.0.20)
-      activesupport (= 3.0.20)
-      bundler (~> 1.0)
-      railties (= 3.0.20)
-    railties (3.0.20)
-      actionpack (= 3.0.20)
-      activesupport (= 3.0.20)
-      rake (>= 0.8.7)
-      rdoc (~> 3.4)
-      thor (~> 0.14.4)
+    railslts-version (3.0.20.3)
     rake (10.3.2)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -142,7 +150,7 @@ DEPENDENCIES
   ffi
   gravatar_image_tag
   pg
-  rails (= 3.0.20)
+  rails!
   rake
   rspec
   rspec-rails (= 2.14.2)

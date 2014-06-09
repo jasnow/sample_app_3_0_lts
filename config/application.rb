@@ -48,5 +48,6 @@ module SampleApp30
     end
    I18n.config.enforce_available_locales = false
    ActionController::Base.config.relative_url_root = ''
+   config.rails_lts_options = { :default => :hardened }
   end
 end
