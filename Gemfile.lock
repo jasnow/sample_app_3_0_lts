@@ -50,7 +50,7 @@ GEM
   specs:
     ZenTest (4.10.0)
     abstract (1.0.0)
-    annotate (2.6.3)
+    annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (2.0.10)
