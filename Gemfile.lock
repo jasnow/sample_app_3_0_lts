@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/makandra/rails.git
-  revision: 1487be662fa2c6a0361f014b336ed46fd82a9b4b
+  revision: 962d7462688a4586e8f16152555f15fb01db1386
   branch: 3-0-lts
   specs:
     actionmailer (3.0.20)
@@ -40,7 +40,7 @@ GIT
     railties (3.0.20)
       actionpack (= 3.0.20)
       activesupport (= 3.0.20)
-      railslts-version (= 3.0.20.3)
+      railslts-version (= 3.0.20.4)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
@@ -69,7 +69,7 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
-    faker (1.4.1)
+    faker (1.4.2)
       i18n (~> 0.5)
     ffi (1.9.3)
     gravatar_image_tag (1.2.0)
@@ -91,7 +91,7 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
-    railslts-version (3.0.20.3)
+    railslts-version (3.0.20.4)
     rake (10.3.2)
     rdoc (3.12.2)
       json (~> 1.4)
