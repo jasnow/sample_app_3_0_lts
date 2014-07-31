@@ -53,6 +53,9 @@ Spork.prefork do
     # Emulate initializer set_clear_dependencies_hook in
     # railities/lib/rails/application/bootstrap.rb
     ActiveSupport::Dependencies.clear
+
+    # For rspec 3.0
+    config.infer_spec_type_from_file_location!
   end
 end
 
