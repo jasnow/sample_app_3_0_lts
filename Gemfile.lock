@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/makandra/rails.git
-  revision: 962d7462688a4586e8f16152555f15fb01db1386
+  revision: e24533bf48099b3cd05883bce1e18334c84b491f
   branch: 3-0-lts
   specs:
     actionmailer (3.0.20)
@@ -40,7 +40,7 @@ GIT
     railties (3.0.20)
       actionpack (= 3.0.20)
       activesupport (= 3.0.20)
-      railslts-version (= 3.0.20.4)
+      railslts-version (= 3.0.20.5)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
@@ -82,7 +82,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     mini_portile (0.6.1)
-    nokogiri (1.6.4)
+    nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
     pg (0.17.1)
     polyglot (0.3.5)
@@ -91,7 +91,7 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
-    railslts-version (3.0.20.4)
+    railslts-version (3.0.20.5)
     rake (10.3.2)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -102,7 +102,7 @@ GEM
       rspec-core (~> 2.99.0)
       rspec-expectations (~> 2.99.0)
       rspec-mocks (~> 2.99.0)
-    rspec-collection_matchers (1.0.0)
+    rspec-collection_matchers (1.1.0)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (2.99.2)
     rspec-expectations (2.99.2)
