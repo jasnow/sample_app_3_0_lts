@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem "rake"
+#gem "rake"
 
 gem 'rails', :git => 'https://github.com/makandra/rails.git', :branch => '3-0-lts'
 
