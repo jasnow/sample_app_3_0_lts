@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/makandra/rails.git
-  revision: e24533bf48099b3cd05883bce1e18334c84b491f
+  revision: 1f3508cef03da4c9c2567feff9c7fe3f9cc4b0d9
   branch: 3-0-lts
   specs:
     actionmailer (3.0.20)
@@ -40,7 +40,7 @@ GIT
     railties (3.0.20)
       actionpack (= 3.0.20)
       activesupport (= 3.0.20)
-      railslts-version (= 3.0.20.5)
+      railslts-version (= 3.0.20.6)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
@@ -91,7 +91,7 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
-    railslts-version (3.0.20.5)
+    railslts-version (3.0.20.6)
     rake (10.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
