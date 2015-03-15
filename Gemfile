@@ -8,7 +8,6 @@ gem 'will_paginate'
 
 group :development do
   gem 'rspec-rails', '2.99.0'
-  #gem 'annotate-models'
   gem 'annotate'
 end
 
@@ -20,7 +19,6 @@ group :test do
   gem 'autotest'
   gem 'autotest-rails-pure'
   gem 'autotest-growl'
-  #BROKEN: gem "ffi"
   gem 'faker'
   gem 'autotest-fsevent'
   gem 'rspec'
