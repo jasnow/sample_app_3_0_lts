@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', :git => 'https://github.com/makandra/rails.git', :branch => '3-0-lts'
+gem 'rails', git: 'https://github.com/makandra/rails.git', branch: '3-0-lts'
 
 gem 'taps'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
+gem 'overcommit'
 
 group :development do
   gem 'rspec-rails', '2.99.0'
