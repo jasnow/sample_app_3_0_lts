@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/makandra/rails.git
+  remote: git://github.com/makandra/rails.git
   revision: f3491b9abdb52d8f2b4597897470650af7e317c5
   branch: 3-0-lts
   specs:
