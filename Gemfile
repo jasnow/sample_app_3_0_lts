@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', github: 'makandra/rails', branch: '3-0-lts'
+gem 'rails', git: 'https://github.com/makandra/rails', branch: '3-0-lts'
 
 gem 'taps'
 gem 'gravatar_image_tag'
