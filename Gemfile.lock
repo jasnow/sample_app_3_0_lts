@@ -49,7 +49,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    ZenTest (4.11.1)
+    ZenTest (4.6.0)
     abstract (1.0.0)
     annotate (2.6.7)
       activerecord (>= 2.3.0)
