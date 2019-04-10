@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-- 2.3.6
+- 2.3.8
 before_script: bundle exec rake db:setup
 before_install: gem update bundler
 cache: bundler
